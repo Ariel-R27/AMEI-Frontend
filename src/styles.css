@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-color: #2C3E50;
+    /* Azul oscuro */
+    --secondary-color: #3498DB;
+    /* Azul brillante */
+    --accent-color: #E74C3C;
+    /* Rojo */
+    --background-color: #ECF0F1;
+    /* Gris claro */
+    --success-color: #2ECC71;
+    /* Verde */
+    --text-primary: #2C3E50;
+    /* Texto principal */
+    --text-secondary: #7F8C8D;
+    /* Texto secundario */
+    --border-color: #BDC3C7;
+    /* Borde gris */
+}

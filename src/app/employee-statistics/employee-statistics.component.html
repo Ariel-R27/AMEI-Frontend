@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Employee Functionality</h2>
+
+    <div class="options">
+        <button (click)="getHighestSalary()">Salario más alto</button>
+        <button (click)="getLowerAge()">Edad más baja</button>
+        <button (click)="getEmployeeCountLastMonth()">Número de empleados el último mes</button>
+    </div>
+
+    <div *ngIf="response">
+        <h3>Resultado:</h3>
+        <pre>{{ response.message }}</pre>
+    </div>
+</div>

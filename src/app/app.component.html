@@ -6,4 +6,8 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<router-outlet><router-outlet />
+<app-main-menu></app-main-menu> <!-- Este es tu menú lateral -->
+
+<div class="content">
+  <router-outlet></router-outlet>  <!-- Aquí se cargan los componentes dinámicamente -->
+</div>
