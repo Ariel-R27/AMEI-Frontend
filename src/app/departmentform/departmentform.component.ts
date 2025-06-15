@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-departmentform',
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './departmentform.component.html',
   styleUrl: './departmentform.component.css'
 })
-export class DepartmentformComponent {
+
+export class DepartmentformComponent implements OnInit {
   departmentForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.departmentForm = this.fb.group({
@@ -21,8 +23,19 @@ export class DepartmentformComponent {
 
   onSubmit(): void {
     if (this.departmentForm.valid) {
-      console.log('Departamento creado:', this.departmentForm.value);
-      // Aquí iría la lógica para enviar el formulario al backend (por ejemplo, una API)
+      const formData = {
+        nombre: this.departmentForm.value.departmentName
+      };
+
+      console.log('Datos enviados al backend:', formData);
+
+      this.http.post('http://localhost:8080/department/create', formData)
+        .subscribe(response => {
+          console.log('Empleado creado:', response);
+        });
+
+    } else {
+      console.log('Formulario inválido');
     }
   }
 }
