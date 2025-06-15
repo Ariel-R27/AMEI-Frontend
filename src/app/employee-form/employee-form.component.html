@@ -1,21 +1,18 @@
 <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
     <label for="firstName">Nombre:</label>
     <input id="firstName" formControlName="firstName" type="text">
-
     <div *ngIf="employeeForm.get('firstName')?.touched && employeeForm.get('firstName')?.invalid">
         <small *ngIf="employeeForm.get('firstName')?.hasError('required')">Este campo es obligatorio.</small>
     </div>
 
     <label for="lastName">Apellido:</label>
     <input id="lastName" formControlName="lastName" type="text">
-
     <div *ngIf="employeeForm.get('lastName')?.touched && employeeForm.get('lastName')?.invalid">
         <small *ngIf="employeeForm.get('lastName')?.hasError('required')">Este campo es obligatorio.</small>
     </div>
 
     <label for="salary">Salario:</label>
-    <input id="salary" formControlName="salary" type="text">
-
+    <input id="salary" formControlName="salary" type="number">
     <div *ngIf="employeeForm.get('salary')?.touched && employeeForm.get('salary')?.invalid">
         <small *ngIf="employeeForm.get('salary')?.hasError('required')">Este campo es obligatorio.</small>
         <small *ngIf="employeeForm.get('salary')?.hasError('pattern')">Solo se permiten números.</small>
@@ -23,10 +20,30 @@
 
     <label for="hireDate">Fecha de Ingreso:</label>
     <input id="hireDate" formControlName="hireDate" type="date">
-
     <div *ngIf="employeeForm.get('hireDate')?.touched && employeeForm.get('hireDate')?.invalid">
         <small *ngIf="employeeForm.get('hireDate')?.hasError('required')">Este campo es obligatorio.</small>
         <small *ngIf="employeeForm.get('hireDate')?.hasError('invalidDate')">Por favor ingresa una fecha válida.</small>
+    </div>
+
+    <label for="department">Departamento:</label>
+    <select id="department" formControlName="departmentId">
+        <option *ngFor="let department of departments" [value]="department.id">{{ department.name }}</option>
+    </select>
+
+    <label for="age">Edad:</label>
+    <input id="age" formControlName="age" type="number">
+    <div *ngIf="employeeForm.get('age')?.touched && employeeForm.get('age')?.invalid">
+        <small *ngIf="employeeForm.get('age')?.hasError('required')">Este campo es obligatorio.</small>
+    </div>
+
+    <label for="role">Rol:</label>
+    <input id="role" formControlName="role" type="text">
+    <div *ngIf="employeeForm.get('role')?.touched && employeeForm.get('role')?.invalid">
+        <small *ngIf="employeeForm.get('role')?.hasError('required')">Este campo es obligatorio.</small>
+    </div>
+
+    <div *ngIf="employeeForm.get('departmentId')?.touched && employeeForm.get('departmentId')?.invalid">
+        <small *ngIf="employeeForm.get('departmentId')?.hasError('required')">Este campo es obligatorio.</small>
     </div>
 
     <button type="submit" [disabled]="employeeForm.invalid">Enviar</button>

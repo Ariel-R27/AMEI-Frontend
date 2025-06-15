@@ -1,13 +1,16 @@
-app-main-menu {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 250px;
-    background-color: #f0f0f0;
+.main-container {
+    display: flex;
+    /* Activa el layout en fila */
+    height: 100vh;
+    /* Ocupar toda la altura de la pantalla */
 }
 
 .content {
-    margin-left: 250px;
+    margin-left: 300px;
+    flex-grow: 1;
+    /* Esto asegura que el contenido ocupe todo el espacio restante */
+    background-color: #ffffff;
     padding: 20px;
+    overflow-y: auto;
+    /* Permite que se desplace si el contenido es muy grande */
 }

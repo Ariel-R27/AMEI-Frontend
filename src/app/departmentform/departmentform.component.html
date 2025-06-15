@@ -1,0 +1,14 @@
+<div class="department-form-container">
+    <h2>Crear Departamento</h2>
+
+    <form [formGroup]="departmentForm" (ngSubmit)="onSubmit()">
+        <label for="departmentName">Nombre del Departamento:</label>
+        <input id="departmentName" formControlName="departmentName" type="text">
+
+        <div *ngIf="departmentForm.get('departmentName')?.touched && departmentForm.get('departmentName')?.invalid">
+            <small *ngIf="departmentForm.get('departmentName')?.hasError('required')">Este campo es obligatorio.</small>
+        </div>
+
+        <button type="submit" [disabled]="departmentForm.invalid">Crear Departamento</button>
+    </form>
+</div>

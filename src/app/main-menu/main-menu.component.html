@@ -1,4 +1,11 @@
 <div class="main-menu">
-    <button (click)="goToEmployeeForm()">Employee Form</button>
-    <button (click)="goToEmployeeFunctionality()">Employee Functionality</button>
-</div>
+    <button (click)="goToEmployeeForm()" [ngClass]="{'active': selectedButton === 'employeeform'}">
+      <i class="fa fa-user"></i> Crear empleados
+    </button>
+    <button (click)="goToEmployeeFunctionality()" [ngClass]="{'active': selectedButton === 'employeefunctionality'}">
+      <i class="fa fa-cogs"></i> Employee
+    </button>
+    <button (click)="goToDepartmentForm()" [ngClass]="{'active': selectedButton === 'departmentform'}">
+      <i class="fa fa-briefcase"></i> Crear departamentos
+    </button>
+  </div>

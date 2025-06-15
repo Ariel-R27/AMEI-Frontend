@@ -1,15 +1,17 @@
-/* Estilos generales para el formulario */
-form {
+.department-form-container {
     background-color: var(--background-color);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-width: 600px;
-    max-width: 900px;
-    margin: 20px;
+    max-width: 600px;
+    margin: 20px auto;
 }
 
-/* Títulos y etiquetas del formulario */
+h2 {
+    color: var(--primary-color);
+    text-align: center;
+}
+
 label {
     display: block;
     font-size: 16px;
@@ -17,8 +19,7 @@ label {
     color: var(--text-primary);
 }
 
-/* Estilo de los inputs */
-input, select {
+input {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -29,13 +30,11 @@ input, select {
     background-color: #fff;
 }
 
-/* Borde de los inputs en estado hover y focus */
 input:focus {
     border-color: var(--secondary-color);
     outline: none;
 }
 
-/* Estilo para los mensajes de error */
 small {
     color: var(--accent-color);
     font-size: 12px;
@@ -43,16 +42,6 @@ small {
     margin-top: 5px;
 }
 
-/* Mensajes de error cuando el input está inválido */
-div small {
-    display: none;
-}
-
-div.ng-touched.ng-invalid small {
-    display: block;
-}
-
-/* Estilo para el botón de enviar */
 button {
     width: 100%;
     padding: 12px;
@@ -65,12 +54,10 @@ button {
     transition: background-color 0.3s ease;
 }
 
-/* Efecto hover en el botón */
 button:hover {
     background-color: var(--primary-color);
 }
 
-/* Estilo para el botón deshabilitado */
 button:disabled {
     background-color: #BDC3C7;
     cursor: not-allowed;
